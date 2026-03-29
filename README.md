@@ -1,65 +1,103 @@
 ```mermaid
 flowchart LR
 
-%% FASES
-subgraph F1["FASE 1 – BASE E DIRECIONAMENTO"]
-A1[Base Referencial\nLeis, MTur, Estado, ODS]
-A2[Definição de Escopo\nDelimitação do PDTUR]
+%% =====================
+%% BASE
+%% =====================
+
+subgraph F1["BASE DO PDTUR"]
+A1[Normativas e Políticas Públicas\nMTur, Estado, ODS]
+A2[Documentos Orientadores\nReferenciais Técnicos]
 end
 
-subgraph F2["FASE 2 – DIAGNÓSTICO"]
-B1[Levantamento de Dados]
-B2[Análise da Realidade Turística]
-B3[Mapeamento da Governança]
+%% =====================
+%% ESTRUTURA DO PLANO
+%% =====================
+
+subgraph F2["ESTRUTURA DO PLANO"]
+B1[Caracterização do Município]
+B2[Organização do Plano\n(Subseções do PDTUR)]
 end
 
-subgraph F3["FASE 3 – PLANEJAMENTO ESTRATÉGICO"]
-C1[Definição de Visão]
-C2[Diretrizes Estratégicas]
-C3[Objetivos e Prioridades]
+%% =====================
+%% DIAGNÓSTICO
+%% =====================
+
+subgraph F3["DIAGNÓSTICO DO TURISMO"]
+C1[Oferta Turística]
+C2[Demanda Turística]
+C3[Infraestrutura]
+C4[Governança]
+C5[Dados e Informações]
 end
 
-subgraph F4["FASE 4 – ESTRUTURAÇÃO DO PLANO"]
-D1[Matriz de Implementação do PDTUR]
-D2[Programas e Projetos]
-D3[Ações, Responsáveis, Prazos]
+%% =====================
+%% PROGNÓSTICO
+%% =====================
+
+subgraph F4["PROGNÓSTICO"]
+D1[Análise Estratégica]
+D2[Definição de Diretrizes]
+D3[Prioridades do Turismo]
 end
 
-subgraph F5["FASE 5 – EXECUÇÃO E GESTÃO"]
-E1[Implementação das Ações]
-E2[Articulação Institucional]
+%% =====================
+%% PLANO DE AÇÃO
+%% =====================
+
+subgraph F5["PLANO DE AÇÃO"]
+E1[Matriz de Implementação do PDTUR]
+E2[Programas e Projetos]
+E3[Ações, Responsáveis, Prazos]
 end
 
-subgraph F6["FASE 6 – MONITORAMENTO E AVALIAÇÃO"]
+%% =====================
+%% MONITORAMENTO
+%% =====================
+
+subgraph F6["GESTÃO E MONITORAMENTO"]
 F1A[Acompanhamento]
-F2A[Avaliação de Resultados]
+F2A[Avaliação]
 F3A[Revisão do Plano]
 end
 
-%% FLUXO PRINCIPAL
-A1 --> A2 --> B1 --> B2 --> B3 --> C1 --> C2 --> C3 --> D1 --> D2 --> D3 --> E1 --> E2 --> F1A --> F2A --> F3A
+%% =====================
+%% FLUXO
+%% =====================
+
+A1 --> A2 --> B1 --> B2 --> C1
+C1 --> C2 --> C3 --> C4 --> C5
+C5 --> D1 --> D2 --> D3
+D3 --> E1 --> E2 --> E3
+E3 --> F1A --> F2A --> F3A
 
 %% LOOP
-F3A --> C1
+F3A --> D1
 
+%% =====================
 %% DIMENSÕES
+%% =====================
+
 G[Governança]
 H[Planejamento Estratégico]
 I[Mensuração]
 J[Competitividade]
 K[Sustentabilidade\nTransversal]
 
-G --- B3
-G --- E2
-H --- C1
-H --- C2
+G --- C4
+G --- F1A
+
+H --- D1
+H --- D2
+
 I --- F1A
 I --- F2A
+
 J --- F2A
 
 K --- A1
-K --- B2
-K --- C2
+K --- B1
+K --- C1
 K --- D1
 K --- E1
 K --- F2A
